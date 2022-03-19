@@ -1,36 +1,37 @@
-#include <stdio.h>
-
-void compareStrings(char *x, char *y)
-{
-    int flag = 0;
-
-    while (*x != '\0' || *y != '\0')
-    {
-        if (*x == *y)
-        {
-            x++;
-            y++;
-        }
-
-        else if ((*x == '\0' && *y != '\0') || (*x != '\0' && *y == '\0') || *x != *y)
-        {
-            flag = 1;
-            printf("Unequal Strings\n");
-            break;
-        }
-    }
-
-    if (flag == 0)
-    {
-        printf("Equal Strings\n");
-    }
-}
-
-int main(void)
-{
-    char s1[20] = "python";
-    char s2[20] = "dsa";
-
-    compareStrings(s1, s2);
-    return 0;
+#include <stdio.h>  
+int compare(char[],char[]);  
+int main()  
+{  
+   char str1[20]; // declaration of char array  
+   char str2[20]; // declaration of char array  
+   printf("Enter the first string : ");  
+   scanf("%s",str1);  
+   printf("Enter the second string : ");  
+   scanf("%s",str2);  
+   int c= compare(str1,str2); // calling compare() function  
+   if(c==0)  
+   printf("strings are same");  
+   else  
+   printf("strings are not same");  
+  
+    return 0;  
+}  
+  
+// Comparing both the strings.  
+int compare(char a[],char b[])  
+{  
+    int flag=0,i=0;  // integer variables declaration  
+    while(a[i]!='\0' &&b[i]!='\0')  // while loop  
+    {  
+       if(a[i]!=b[i])  
+       {  
+           flag=1;  
+           break;  
+       }  
+       i++;  
+    }  
+    if(flag==0)  
+    return 0;  
+    else  
+    return 1;  
 }
